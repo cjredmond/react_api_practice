@@ -24,10 +24,9 @@ class AddPerson extends Component {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          name: 'Nick',
-          color: 'Blue',
-          number: 6,
-          id: 3
+          name: this.refs.name.value,
+          color: this.refs.category.value,
+          number: this.refs.number.value,
         })
       })
       .then ( function (resp){

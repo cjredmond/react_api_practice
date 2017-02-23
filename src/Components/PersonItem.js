@@ -3,11 +3,13 @@ import React, { Component } from 'react';
 class PersonItem extends Component {
 
   render() {
+    var stars = '*'.repeat(this.props.person.number)
     return (
-      <li className="Person">
-        <strong>{this.props.person.name}</strong>: {this.props.person.number}
-        <p>Fave Color: {this.props.person.color}</p>
-      </li>
+      <div className="Person">
+        <strong>{this.props.person.name}</strong>
+        <li> {this.props.person.number} {stars}</li>
+        <li className={this.props.person.color.toLowerCase()}>Fave Color: {this.props.person.color}</li>
+      </div>
     );
   }
 }
