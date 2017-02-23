@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import $ from 'jquery';
+import Persons from './Components/Persons'
 
 class App extends Component {
   constructor(){
     super();
     this.state = {
-      people: []
+      persons: []
     }
   }
 
@@ -16,8 +17,7 @@ class App extends Component {
       dataType: 'json',
       cache: false,
       success: function(data){
-        this.setState({people: data}, function(){
-          console.log(this.state)
+        this.setState({persons: data}, function(){
         }
         );
       }.bind(this),
@@ -31,12 +31,12 @@ class App extends Component {
     this.getPeople();
   }
 
-  
+
 
   render() {
     return (
       <div className="App">
-
+        <Persons persons={this.state.persons} />
       </div>
     );
   }
