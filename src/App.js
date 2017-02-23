@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import $ from 'jquery';
 import Persons from './Components/Persons'
+import AddPerson from './Components/AddPerson'
 
 class App extends Component {
   constructor(){
@@ -31,11 +32,14 @@ class App extends Component {
     this.getPeople();
   }
 
-
+  handleAddPerson(){
+    console.log('here')
+  }
 
   render() {
     return (
       <div className="App">
+        <AddPerson addPerson={this.handleAddPerson.bind(this)}/>
         <Persons persons={this.state.persons} />
       </div>
     );

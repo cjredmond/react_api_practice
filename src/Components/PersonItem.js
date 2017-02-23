@@ -6,6 +6,7 @@ class PersonItem extends Component {
     return (
       <li className="Person">
         <strong>{this.props.person.name}</strong>: {this.props.person.number}
+        <p>Fave Color: {this.props.person.color}</p>
       </li>
     );
   }
